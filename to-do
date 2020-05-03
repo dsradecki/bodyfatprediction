@@ -1,0 +1,8 @@
+- remove outliers using boxplots
+- remove variables not correlated to the response variable
+- implement least squares for matrix form, i.e. solving normal equations
+- research question: how additional predictor variables (in addition to the density) might increase the prediction score in body fat
+- do multicollinearity tests
+- perform PCA for weight and correlated variables in order to see how different attributes might help in prediction (otherwise it is not possible
+  to calculate significance because we deal with multicollinearity)
+- cross validation for evaluation
