@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 def show_correlogram(data):
 
     corr = data.corr()
-    #corr = (corr > 0.5) * 1
     fig = plt.figure(figsize = (15, 15))
     ax = fig.add_subplot(111)
     cax = ax.matshow(corr, cmap='coolwarm', vmin=-1, vmax=1)
@@ -27,6 +27,7 @@ def show_correlogram(data):
                      verticalalignment='center',
                      )
     plt.show()
+
 
 def boxplots(data):
 

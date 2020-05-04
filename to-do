@@ -6,3 +6,5 @@
 - perform PCA for weight and correlated variables in order to see how different attributes might help in prediction (otherwise it is not possible
   to calculate significance because we deal with multicollinearity)
 - cross validation for evaluation
+
+https://waterprogramming.wordpress.com/2017/02/22/dealing-with-multicollinearity-a-brief-overview-and-introduction-to-tolerant-methods/
