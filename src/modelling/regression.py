@@ -1,22 +1,28 @@
 from numpy.linalg import inv
+import src.modelling.helper as helper
+import importlib
+
+importlib.reload(helper)
 
 
 class MultipleRegression:
 
-    def __init__(self):
-        self.params = []
+    class Prediction:
+
+        def __init__(self, params, X, Y):
+            self.params = params
+            self.X = X
+            self.Y = Y
+            self.r_squared = helper.r_squared(self.Y, self.predict(self.X))
+
+        def predict(self, X):
+            return X.dot(self.params)
+
+        def analyse(self):
+            return self.r_squared
 
     def fit(self, X, y):
-        X_transpose = X.T
-        self.params = inv(X_transpose.dot(X)).dot(X_transpose).dot(y)
 
-    def predict(self, X):
-        if len(self.params) == 0:
-            return None
+        params = helper.normal_equations(X, y)
 
-        return X.dot(self.params)
-
-    def get_params(self):
-        return self.params
-
-
+        return self.Prediction(params, X, y)
