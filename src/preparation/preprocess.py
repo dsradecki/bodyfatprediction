@@ -9,8 +9,6 @@ def read_data():
 
 def normalise(data):
 
-    #data = data.apply(lambda x: 100 * x, axis = 0)
-
     return data.apply(lambda x: (x - min(x))/(max(x) - min(x)), axis=0)
 
 
